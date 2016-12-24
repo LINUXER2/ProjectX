@@ -1,4 +1,4 @@
-package com.jinn.projectx.textaligndemo;
+package com.jinn.projectx.first;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

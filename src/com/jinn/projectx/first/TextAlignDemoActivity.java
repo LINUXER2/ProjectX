@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.jinn.projectx.textaligndemo;
+package com.jinn.projectx.first;
 
 import com.jinn.projectx.R;
 
@@ -14,7 +14,7 @@ import android.view.View;
  *
  */
 
-public class FirstActivity extends Activity {
+public class TextAlignDemoActivity extends Activity {
     private MyTextView view;
     @Override
     public void onCreate(Bundle savedInstanceState) {

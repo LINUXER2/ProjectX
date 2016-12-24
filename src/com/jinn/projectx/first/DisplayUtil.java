@@ -1,4 +1,4 @@
-package com.jinn.projectx.textaligndemo;
+package com.jinn.projectx.first;
 public class DisplayUtil {
     /**
      * 将px值转换为dip或dp值，保证尺寸大小不变

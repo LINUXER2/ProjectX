@@ -1,6 +1,7 @@
-package com.jinn.projectx;
+package com.jinn.projectx.main;
 
-import com.jinn.projectx.textaligndemo.FirstActivity;
+import com.jinn.projectx.R;
+import com.jinn.projectx.first.TextAlignDemoActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -20,9 +21,11 @@ public class MainActivity extends Activity implements OnClickListener{
     public void onClick(View view) {
         Intent intent = new Intent();
         if (view.getId() == R.id.button1) {
-            intent.setClass(MainActivity.this, FirstActivity.class);
+            intent.setClass(MainActivity.this, TextAlignDemoActivity.class);
             startActivity(intent);
-        }        
+        } else if(view.getId()==R.id.button2){
+            
+        }       
 
     }
  
