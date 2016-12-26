@@ -21,7 +21,9 @@ public class TextAlignDemoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         view=(MyTextView)findViewById(R.id.mytextview);
-        view.setText("AAAAAAA");
+        view.setText("AABBCCaabbcc");
+        view.setTextSize(30);
+        view.setTextAlign(MyTextView.TEXT_ALIGN_BOTTOM | MyTextView.TEXT_ALIGN_CENTER_HORIZONTAL);
     }
  
     @Override

@@ -2,17 +2,13 @@ package com.jinn.projectx.first;
  
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.RectF;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.FontMetrics;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 /**
  * 自定义文本显示控件
@@ -26,7 +22,7 @@ import android.view.View;
 public class MyTextView extends View {
     
     /** 要显示的文字 */
-    private String text = "ABCDEFGHIJK123456";
+    private String text;
     /** 文字的颜色 */
     private int textColor;
     /** 文字的大小 */
@@ -77,10 +73,12 @@ public class MyTextView extends View {
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setTextAlign(Align.CENTER);
-        //默认情况下文字居中显示
-        textAlign = TEXT_ALIGN_CENTER_HORIZONTAL | TEXT_ALIGN_CENTER_VERTICAL;
+        //默认情况下文字居中显示      
+        this.textAlign = TEXT_ALIGN_CENTER_HORIZONTAL | TEXT_ALIGN_CENTER_VERTICAL;
         //默认的文本颜色是黑色
         this.textColor = Color.BLACK;
+        this.textSize = 20;
+        this.text="AAAAAAA";
     }
     
     @Override
@@ -95,6 +93,7 @@ public class MyTextView extends View {
     protected void onDraw(Canvas canvas) {
         //绘制控件内容
         setTextLocation();
+        Log.d("jinn","textCenterX=="+textCenterX+"  textBaselineY=="+textBaselineY+" text=="+text);
         canvas.drawText(text, textCenterX, textBaselineY, paint);
         super.onDraw(canvas);
     }
@@ -155,7 +154,6 @@ public class MyTextView extends View {
      */
     public void setText(String text) {
         this.text = text;
-        invalidate();
     }
     /**
      * 设置文本大小
@@ -163,15 +161,13 @@ public class MyTextView extends View {
      */
     public void setTextSize(int textSizeSp) {
         DisplayParams displayParams = DisplayParams.getInstance(context);
-        this.textSize = DisplayUtil.sp2px(textSizeSp, displayParams.fontScale);
-        invalidate();
+        this.textSize = DisplayUtil.sp2px(textSizeSp, displayParams.fontScale); 
     }
     /**
      * 设置文本的方位
      */
     public void setTextAlign(int textAlign) {
         this.textAlign = textAlign;
-        invalidate();
     }
     /**
      * 设置文本的颜色
@@ -179,6 +175,5 @@ public class MyTextView extends View {
      */
     public void setTextColor(int textColor) {
         this.textColor = textColor;
-        invalidate();
     }
 }
