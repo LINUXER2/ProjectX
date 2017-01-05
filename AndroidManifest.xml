@@ -13,5 +13,7 @@
         </activity>
         <!--created by ADT ext plugin at 2016-12-12 10:32:08-->
         <activity android:name=".first.TextAlignDemoActivity"/>
+        <!--created by ADT ext plugin at 2017-01-05 18:20:38-->
+        <activity android:name=".second.WaveDemoActivity"/>
     </application>
 </manifest>

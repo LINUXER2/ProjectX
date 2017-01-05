@@ -2,6 +2,7 @@ package com.jinn.projectx.main;
 
 import com.jinn.projectx.R;
 import com.jinn.projectx.first.TextAlignDemoActivity;
+import com.jinn.projectx.second.WaveDemoActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,7 +25,8 @@ public class MainActivity extends Activity implements OnClickListener{
             intent.setClass(MainActivity.this, TextAlignDemoActivity.class);
             startActivity(intent);
         } else if(view.getId()==R.id.button2){
-            
+            intent.setClass(MainActivity.this, WaveDemoActivity.class);
+            startActivity(intent);
         }       
 
     }
