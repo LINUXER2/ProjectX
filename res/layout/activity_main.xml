@@ -13,14 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="Button" />
+        android:text="文本对齐" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          android:onClick="onClick"
-        android:text="Button" />
+        android:text="正弦波" />
 
     <Button
         android:id="@+id/button3"
