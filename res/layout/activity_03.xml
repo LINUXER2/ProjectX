@@ -32,4 +32,4 @@
         android:src="@drawable/scroll2"
         android:clickable="true"/>
 
-</com.jinn.projectx.Activity03.ParentView>
+</com.jinn.projectx.activity.Activity03.ParentView>
