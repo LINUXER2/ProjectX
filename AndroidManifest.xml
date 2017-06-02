@@ -5,18 +5,18 @@
     <application android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" android:theme="@style/AppTheme">
-        <activity android:label="@string/app_name" android:name=".main.MainActivity">
+        <activity android:label="@string/app_name" android:name="com.jinn.projectx.activity.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <!--created by ADT ext plugin at 2016-12-12 10:32:08-->
-        <activity android:name=".first.TextAlignDemoActivity"/>
+        <activity android:name="com.jinn.projectx.activity.Activity01.TextAlignDemoActivity"/>
         <!--created by ADT ext plugin at 2017-01-05 18:20:38-->
-        <activity android:name=".second.WaveDemoActivity"/>
+        <activity android:name="com.jinn.projectx.activity.Activity02.WaveDemoActivity"/>
         <!--created by ADT ext plugin at 2017-02-09 11:09:48-->
-        <activity android:name=".third.ViewGroupActivity"/>
+        <activity android:name="com.jinn.projectx.activity.Activity03.ViewGroupActivity"/>
         <!--created by ADT ext plugin at 2017-02-15 17:32:43-->
         <activity android:name=".fourth.AidlClientActivity"></activity>
  

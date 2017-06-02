@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\MyGithub\ProjectX\assets"/><source path="E:\MyGithub\ProjectX\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\MyGithub\ProjectX\build-types\debug\assets"/></dataSet></merger>

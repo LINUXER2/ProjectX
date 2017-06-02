@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jinn.projectx"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.jinn.projectx.main.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- created by ADT ext plugin at 2016-12-12 10:32:08 -->
+        <activity android:name="com.jinn.projectx.Activity01.TextAlignDemoActivity" />
+        <!-- created by ADT ext plugin at 2017-01-05 18:20:38 -->
+        <activity android:name="com.jinn.projectx.Activity02.WaveDemoActivity" />
+        <!-- created by ADT ext plugin at 2017-02-09 11:09:48 -->
+        <activity android:name="com.jinn.projectx.Activity03.ViewGroupActivity" />
+        <!-- created by ADT ext plugin at 2017-02-15 17:32:43 -->
+        <activity android:name="com.jinn.projectx.fourth.AidlClientActivity" />
+
+        <service android:name="com.jinn.projectx.fourth.AidlService" >
+            <intent-filter>
+                <action android:name="android.intent.action.AIDLService" >
+                    <category android:name="android.intent.category.DEFAULT" />
+                </action>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
