@@ -27,14 +27,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          android:onClick="onClick"
-        android:text="Button" />
+        android:text="ViewGroup" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          android:onClick="onClick"
-        android:text="Button" />
+        android:text="HandlerThread" />
 
     <Button
         android:id="@+id/button5"

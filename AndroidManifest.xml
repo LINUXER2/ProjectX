@@ -18,12 +18,13 @@
         <!--created by ADT ext plugin at 2017-02-09 11:09:48-->
         <activity android:name="com.jinn.projectx.activity.Activity03.ViewGroupActivity"/>
         <!--created by ADT ext plugin at 2017-02-15 17:32:43-->
-        <activity android:name=".fourth.AidlClientActivity"></activity>
- 
+        <activity android:name=".fourth.AidlClientActivity"/>
+        <!--created by ADT ext plugin at 2017-06-27 19:55:27-->
+        <activity android:name=".activity.Activity04.HandlerThreadActivity"/>
         <service android:name=".fourth.AidlService">
             <intent-filter>
                 <action android:name="android.intent.action.AIDLService">
-                    <category android:name="android.intent.category.DEFAULT"></category>
+                    <category android:name="android.intent.category.DEFAULT"/>
                 </action>
             </intent-filter>
         </service>
