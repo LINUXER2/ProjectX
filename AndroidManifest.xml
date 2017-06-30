@@ -1,32 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest android:versionCode="1" android:versionName="1.0"
-    package="com.jinn.projectx" xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="22"/>
-    <application android:allowBackup="true"
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jinn.projectx"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" android:theme="@style/AppTheme">
-        <activity android:label="@string/app_name" android:name="com.jinn.projectx.activity.main.MainActivity">
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.main.MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--created by ADT ext plugin at 2016-12-12 10:32:08-->
-        <activity android:name="com.jinn.projectx.activity.Activity01.TextAlignDemoActivity"/>
-        <!--created by ADT ext plugin at 2017-01-05 18:20:38-->
-        <activity android:name="com.jinn.projectx.activity.Activity02.WaveDemoActivity"/>
-        <!--created by ADT ext plugin at 2017-02-09 11:09:48-->
-        <activity android:name="com.jinn.projectx.activity.Activity03.ViewGroupActivity"/>
-        <!--created by ADT ext plugin at 2017-02-15 17:32:43-->
-        <activity android:name=".fourth.AidlClientActivity"/>
-        <!--created by ADT ext plugin at 2017-06-27 19:55:27-->
-        <activity android:name=".activity.Activity04.HandlerThreadActivity"/>
+        <!-- created by ADT ext plugin at 2016-12-12 10:32:08 -->
+        <activity android:name=".activity.Activity01.TextAlignDemoActivity" />
+        <!-- created by ADT ext plugin at 2017-01-05 18:20:38 -->
+        <activity android:name=".activity.Activity02.WaveDemoActivity" />
+        <!-- created by ADT ext plugin at 2017-02-09 11:09:48 -->
+        <activity android:name=".activity.Activity03.ViewGroupActivity" />
+        <!-- created by ADT ext plugin at 2017-02-15 17:32:43 -->
+        <activity android:name=".fourth.AidlClientActivity" />
+        <!-- created by ADT ext plugin at 2017-06-27 19:55:27 -->
+        <activity android:name=".activity.Activity04.HandlerThreadActivity" />
+
         <service android:name=".fourth.AidlService">
             <intent-filter>
                 <action android:name="android.intent.action.AIDLService">
-                    <category android:name="android.intent.category.DEFAULT"/>
+                    <category android:name="android.intent.category.DEFAULT" />
                 </action>
             </intent-filter>
         </service>
+
+        <activity android:name=".activity.Activity05.ThreadPoolActivity"></activity>
     </application>
+
 </manifest>
