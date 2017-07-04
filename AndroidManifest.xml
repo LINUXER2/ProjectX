@@ -45,7 +45,8 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".activity.Activity05.ThreadPoolActivity"></activity>
+        <activity android:name=".activity.Activity05.ThreadPoolActivity" />
+        <activity android:name=".activity.Activity06.ReflectionActivity"></activity>
     </application>
 
 </manifest>

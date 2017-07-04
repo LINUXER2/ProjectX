@@ -6,6 +6,7 @@ import com.jinn.projectx.activity.Activity02.WaveDemoActivity;
 import com.jinn.projectx.activity.Activity03.ViewGroupActivity;
 import com.jinn.projectx.activity.Activity04.HandlerThreadActivity;
 import com.jinn.projectx.activity.Activity05.ThreadPoolActivity;
+import com.jinn.projectx.activity.Activity06.ReflectionActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -39,6 +40,9 @@ public class MainActivity extends Activity implements OnClickListener{
             startActivity(intent);
         }   else if(view.getId()==R.id.button5){
             intent.setClass(MainActivity.this, ThreadPoolActivity.class);
+            startActivity(intent);
+        } else if (view.getId() == R.id.button6) {
+            intent.setClass(MainActivity.this, ReflectionActivity.class);
             startActivity(intent);
         }
 
