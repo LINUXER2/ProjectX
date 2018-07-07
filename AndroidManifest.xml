@@ -32,21 +32,12 @@
         <activity android:name=".activity.Activity02.WaveDemoActivity" />
         <!-- created by ADT ext plugin at 2017-02-09 11:09:48 -->
         <activity android:name=".activity.Activity03.ViewGroupActivity" />
-        <!-- created by ADT ext plugin at 2017-02-15 17:32:43 -->
-        <activity android:name=".fourth.AidlClientActivity" />
         <!-- created by ADT ext plugin at 2017-06-27 19:55:27 -->
         <activity android:name=".activity.Activity04.HandlerThreadActivity" />
-
-        <service android:name=".fourth.AidlService">
-            <intent-filter>
-                <action android:name="android.intent.action.AIDLService">
-                    <category android:name="android.intent.category.DEFAULT" />
-                </action>
-            </intent-filter>
-        </service>
-
         <activity android:name=".activity.Activity05.ThreadPoolActivity" />
-        <activity android:name=".activity.Activity06.ReflectionActivity"></activity>
+        <activity android:name=".activity.Activity06.ReflectionActivity" />
+        <activity android:name=".activity.Activity07.ClientActivity"></activity>
+        <service android:name=".activity.Activity07.LocalSocketService" android:process=":server"></service>
     </application>
 
 </manifest>
