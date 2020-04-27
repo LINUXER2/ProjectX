@@ -4,6 +4,7 @@
 package com.jinn.projectx.activity.Activity04;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -49,6 +50,10 @@ public class HandlerThreadActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mWorkHandler.sendEmptyMessage(0);   //ui线程通過Handler向子线程发送消息，消息排隊等待處理
+                Intent intent = new Intent();
+                intent.setAction("action_direct_move_to_hiboard");
+                intent.putExtra("card_type", 12);         //cardType为卡片id，不同卡片id由负一屏提供
+                HandlerThreadActivity.this.sendBroadcast(intent);
             }
         });
 

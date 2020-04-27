@@ -1,7 +1,6 @@
 package com.jinn.projectx.activity.Activity03;
 
 import android.content.Context;
-import android.support.v4.view.ViewConfigurationCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -50,7 +49,7 @@ public class ParentView extends ViewGroup {
         mScroller = new Scroller(context);
         ViewConfiguration configuration = ViewConfiguration.get(context);
         // 获取TouchSlop值
-        mTouchSlop = ViewConfigurationCompat.getScaledPagingTouchSlop(configuration);
+        mTouchSlop =2; //ViewConfigurationCompat.getScaledPagingTouchSlop(configuration);
     }
 
     @Override
