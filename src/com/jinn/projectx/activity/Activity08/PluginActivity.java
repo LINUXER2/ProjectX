@@ -42,13 +42,16 @@ public class PluginActivity extends Activity {
         HeavyWorkThread.getHandler().post(new Runnable() {
             @Override
             public void run() {
+                getRemoteResource("com.vivo.hiboard");
                 copyFileFromAssets("pluginmodule-debug.apk");
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        patchClassLoader(mContext.getClassLoader(),new File(Environment.getExternalStorageDirectory()+"/"+"pluginmodule-debug.apk"),mContext);
-                         try{
-                             Class<?>mLoadedClass = mContext.getClassLoader().loadClass("com.jinn.pluginmodule.ViewManager");
+                        String path = Environment.getExternalStorageDirectory()+"/"+"pluginmodule-debug.apk";
+                       // patchClassLoader(mContext.getClassLoader(),new File(Environment.getExternalStorageDirectory()+"/"+"pluginmodule-debug.apk"),mContext);
+                        DexClassLoader dexClassLoader = new DexClassLoader(path,null,null,mContext.getClassLoader());
+                        try{
+                             Class<?>mLoadedClass = dexClassLoader.loadClass("com.jinn.pluginmodule.ViewManager");
                              Object loadInstance = mLoadedClass.newInstance();
                              Method method = mLoadedClass.getMethod("getView",Context.class);
                              final Object object1 = method.invoke(loadInstance,mContext);
@@ -65,6 +68,22 @@ public class PluginActivity extends Activity {
         });
     }
 
+    private void getRemoteResource(String pkgName){
+        try{
+          Context context = mContext.createPackageContext(pkgName,CONTEXT_INCLUDE_CODE|CONTEXT_IGNORE_SECURITY);
+          int id = context.getResources().getIdentifier("app_name","string",pkgName);
+          String remoteName = context.getString(id);
+          Logit.d(TAG,"getRemoteResource:"+remoteName);
+        }catch (PackageManager.NameNotFoundException e){
+          Logit.i(TAG,"name not found:"+e.toString());
+        }
+
+    }
+
+    /**
+     * 将assert下的文件保存在sd卡
+     * @param fileName
+     */
     private void copyFileFromAssets(String fileName){
         if(ContextCompat.checkSelfPermission(PluginActivity.this,Manifest.permission.WRITE_EXTERNAL_STORAGE)!=
         PackageManager.PERMISSION_GRANTED){
