@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="LocalSocket通信" />
+        android:text="跨進程通信" />
 
     <Button
         android:id="@+id/button8"

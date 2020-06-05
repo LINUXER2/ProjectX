@@ -6,6 +6,10 @@
     android:orientation="vertical"
     tools:context="com.jinn.projectx.activity.Activity07.ClientActivity" >
 
+    <TextView
+        android:text="socket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,5 +43,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
     </ImageView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AIDL"></TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="button5"
+        android:text="AIDL实例">
+
+    </Button>
 
 </LinearLayout>

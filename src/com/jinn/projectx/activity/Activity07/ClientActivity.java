@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+/*
+ Socket通信
+ */
 public class ClientActivity extends Activity {
     private InputStream inputStream;
     private OutputStream outputStream;
@@ -100,6 +103,11 @@ public class ClientActivity extends Activity {
             }
 
         }
+    }
+
+    public void button5(View view) {
+          Intent intent = new Intent(ClientActivity.this,AidlClientActivity.class);
+          this.startActivity(intent);
     }
 
 }

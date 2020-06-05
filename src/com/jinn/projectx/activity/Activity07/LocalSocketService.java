@@ -98,6 +98,7 @@ public class LocalSocketService extends Service {
             HttpURLConnection conn = (HttpURLConnection) imgUrl.openConnection();
             conn.setDoInput(true);
             conn.connect();
+
             is = conn.getInputStream();
         } catch (MalformedURLException e) {
             e.printStackTrace();
