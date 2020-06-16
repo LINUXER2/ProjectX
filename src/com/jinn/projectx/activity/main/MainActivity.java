@@ -7,7 +7,7 @@ import com.jinn.projectx.activity.Activity03.ViewGroupActivity;
 import com.jinn.projectx.activity.Activity04.HandlerThreadActivity;
 import com.jinn.projectx.activity.Activity05.ThreadPoolActivity;
 import com.jinn.projectx.activity.Activity06.ReflectionActivity;
-import com.jinn.projectx.activity.Activity07.ClientActivity;
+import com.jinn.projectx.activity.Activity07.SocketClientActivity;
 import com.jinn.projectx.activity.Activity08.PluginActivity;
 
 import android.app.Activity;
@@ -47,7 +47,7 @@ public class MainActivity extends Activity implements OnClickListener{
             intent.setClass(MainActivity.this, ReflectionActivity.class);
             startActivity(intent);
         }  else if (view.getId() == R.id.button7) {
-            intent.setClass(MainActivity.this, ClientActivity.class);
+            intent.setClass(MainActivity.this, SocketClientActivity.class);
             startActivity(intent);
         }else if (view.getId() == R.id.button8) {
             intent.setClass(MainActivity.this, PluginActivity.class);

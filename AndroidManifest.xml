@@ -32,7 +32,7 @@
         <activity android:name=".activity.Activity04.HandlerThreadActivity" />
         <activity android:name=".activity.Activity05.ThreadPoolActivity" />
         <activity android:name=".activity.Activity06.ReflectionActivity" />
-        <activity android:name=".activity.Activity07.ClientActivity" />
+        <activity android:name=".activity.Activity07.SocketClientActivity" />
 
         <service
             android:name=".activity.Activity07.LocalSocketService"

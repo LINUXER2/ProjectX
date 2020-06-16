@@ -22,7 +22,7 @@ public class TextAlignDemoActivity extends Activity {
         view=(MyTextView)findViewById(R.id.mytextview);
         view.setText("AABBCCaabbcc");
         view.setTextSize(30);
-        view.setTextAlign(MyTextView.TEXT_ALIGN_BOTTOM | MyTextView.TEXT_ALIGN_CENTER_HORIZONTAL);
+        view.setTextAlign(MyTextView.TEXT_ALIGN_CENTER_VERTICAL | MyTextView.TEXT_ALIGN_CENTER_HORIZONTAL);
     }
  
     @Override

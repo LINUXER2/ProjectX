@@ -18,13 +18,13 @@ import java.io.OutputStream;
 /*
  Socket通信
  */
-public class ClientActivity extends Activity {
+public class SocketClientActivity extends Activity {
     private InputStream inputStream;
     private OutputStream outputStream;
     public final static String ADDRESS = "/com/jin/kai100";
     private ImageView imageView;
     LocalSocket localSocket;
-    private final String TAG="ClientActivity";
+    private final String TAG="SocketClientActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,7 +106,7 @@ public class ClientActivity extends Activity {
     }
 
     public void button5(View view) {
-          Intent intent = new Intent(ClientActivity.this,AidlClientActivity.class);
+          Intent intent = new Intent(SocketClientActivity.this,AidlClientActivity.class);
           this.startActivity(intent);
     }
 
