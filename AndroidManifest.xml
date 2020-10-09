@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:name=".ProjectApplication"
@@ -14,7 +16,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Activity07.AidlClientActivity"></activity>
+        <activity android:name=".activity.Activity09.DecRecycleViewActivity"></activity>
+        <activity android:name=".activity.Activity07.AidlClientActivity" />
         <activity android:name=".activity.Activity08.PluginActivity" />
         <activity
             android:name=".activity.main.MainActivity"

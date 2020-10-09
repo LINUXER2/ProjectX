@@ -29,6 +29,12 @@ public class ViewManager implements PluginCardInterface {
 
     @Override
     public void onMovingInHiboard() {
+
+        try {
+            Thread.sleep(5000);
+        }catch (Exception e){
+            Log.d(TAG, "onMovingInHiboard,e:"+e.toString());
+        }
         Log.d(TAG, "onMovingInHiboard");
     }
 

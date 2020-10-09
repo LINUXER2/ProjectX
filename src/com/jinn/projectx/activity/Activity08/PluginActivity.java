@@ -58,6 +58,8 @@ public class PluginActivity extends Activity {
                              if(object1 instanceof View){
                                 PluginActivity.this.addContentView((View)object1,new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                              }
+                             //
+                             mLoadedClass.getMethod("onMovingInHiboard").invoke(loadInstance);
                          }catch (Exception e){
                              Logit.i(TAG,"load class error:"+e.toString());
                          }

@@ -9,6 +9,7 @@ import com.jinn.projectx.activity.Activity05.ThreadPoolActivity;
 import com.jinn.projectx.activity.Activity06.ReflectionActivity;
 import com.jinn.projectx.activity.Activity07.SocketClientActivity;
 import com.jinn.projectx.activity.Activity08.PluginActivity;
+import com.jinn.projectx.activity.Activity09.DecRecycleViewActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -30,29 +31,24 @@ public class MainActivity extends Activity implements OnClickListener{
         Intent intent = new Intent();
         if (view.getId() == R.id.button1) {
             intent.setClass(MainActivity.this, TextAlignDemoActivity.class);
-            startActivity(intent);
         } else if(view.getId()==R.id.button2){
             intent.setClass(MainActivity.this, WaveDemoActivity.class);
-            startActivity(intent);
         }  else if(view.getId()==R.id.button3){
             intent.setClass(MainActivity.this, ViewGroupActivity.class);
-            startActivity(intent);
         }  else if(view.getId()==R.id.button4){
             intent.setClass(MainActivity.this, HandlerThreadActivity.class);
-            startActivity(intent);
         }   else if(view.getId()==R.id.button5){
             intent.setClass(MainActivity.this, ThreadPoolActivity.class);
-            startActivity(intent);
         } else if (view.getId() == R.id.button6) {
             intent.setClass(MainActivity.this, ReflectionActivity.class);
-            startActivity(intent);
         }  else if (view.getId() == R.id.button7) {
             intent.setClass(MainActivity.this, SocketClientActivity.class);
-            startActivity(intent);
         }else if (view.getId() == R.id.button8) {
             intent.setClass(MainActivity.this, PluginActivity.class);
-            startActivity(intent);
+        }else if(view.getId()==R.id.button9){
+            intent.setClass(MainActivity.this, DecRecycleViewActivity.class);
         }
+        startActivity(intent);
 
     }
  

@@ -29,6 +29,8 @@ public class AidlClientActivity extends Activity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String a = "abcdefgh";
+                a.replace("ab",null+"");
                 try{
                     myAidlInterface.getName();
                 }catch (RemoteException e){
