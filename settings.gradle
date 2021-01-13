@@ -1,2 +1,2 @@
-include ':pluginmodule'
+include ':pluginmodule', ':basemodule'
 
