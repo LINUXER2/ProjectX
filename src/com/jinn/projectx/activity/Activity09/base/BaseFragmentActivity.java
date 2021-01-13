@@ -1,6 +1,7 @@
 package com.jinn.projectx.activity.Activity09.base;
 
 import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,10 +20,14 @@ public abstract class BaseFragmentActivity <VM extends ViewModel>extends Fragmen
     }
 
     protected VM createViewModel(){
-        return ViewModelProviders.of(this).get(onBindViewModel());
+     //   return ViewModelProviders.of(this).get(onBindViewModel());
+        return ViewModelProviders.of(this,onBindViewModelFactory()).get(onBindViewModel());
+        //第二个参数作用是让viewModel的构造函数与model对应,由于在get ViewModel时只会走默认的构造函数，model无处赋值
     }
 
     protected abstract Class<VM> onBindViewModel();
+
+    protected abstract ViewModelProvider.Factory onBindViewModelFactory();
 
 
     @Override

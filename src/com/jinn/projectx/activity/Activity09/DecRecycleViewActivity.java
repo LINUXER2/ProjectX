@@ -2,6 +2,7 @@ package com.jinn.projectx.activity.Activity09;
 
 import android.Manifest;
 import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import com.jinn.projectx.R;
 import com.jinn.projectx.activity.Activity09.base.BaseFragmentActivity;
 import com.jinn.projectx.activity.Activity09.viewModel.HomeModel;
 import com.jinn.projectx.activity.Activity09.viewModel.HomeViewModel;
+import com.jinn.projectx.activity.Activity09.viewModel.ViewModelFactory;
 import com.jinn.projectx.activity.Utils.Logit;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
@@ -46,7 +48,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class DecRecycleViewActivity  extends BaseFragmentActivity <HomeViewModel>{
 
     private RecyclerView mRecycleView;
-    private final String url = "http://baobab.kaiyanapp.com/api/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +74,13 @@ public class DecRecycleViewActivity  extends BaseFragmentActivity <HomeViewModel
                 Logit.d("jinn","onChanged:"+strings.toString());
             }
         });
-        mViewModel.getHomeData();
+        mViewModel.getHomeData1();
     }
 
-
+    @Override
+    protected ViewModelProvider.Factory onBindViewModelFactory() {
+        return ViewModelFactory.getInstance(getApplication());
+    }
 
     @Override
     protected Class onBindViewModel() {

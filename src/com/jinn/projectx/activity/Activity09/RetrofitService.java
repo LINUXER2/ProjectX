@@ -16,13 +16,13 @@ import retrofit2.http.Query;
  */
 public interface RetrofitService {
     @GET("v2/feed?")
-    Call<ResponseBody> getInfo(@Query("key")String key);
+    Call<ResponseBody> getHomeDataCall(@Query("key")String key);
 
     @POST("v2/feed")
     @FormUrlEncoded
-    Call<ResponseBody> postInfo(@FieldMap Map<String,Object>map);
+    Call<ResponseBody> postHomeDataCall(@FieldMap Map<String,Object>map);
 
 
     @GET("v2/feed?")
-    Observable<ResponseBody> getInfo2(@Query("key")String key);
+    Observable<ResponseBody> getHomeDataObservable(@Query("key")String key);
 }

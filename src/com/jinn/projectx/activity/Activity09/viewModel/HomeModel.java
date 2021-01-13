@@ -20,10 +20,6 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -34,56 +30,38 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * 负责获取数据
  */
 public class HomeModel extends BaseModel {
-    private String url = "http://baobab.kaiyanapp.com/api/";
+    private String url = "https://baobab.kaiyanapp.com/api/";
 
     /**
      * 使用retrofit，返回值為Observable
      * @return
      */
-    public Observable<ResponseBody> requestHomeData(){
+    public Observable<ResponseBody> requestHomeDataObservable(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())    //區別就是這裏，决定返回值是observalbe还是call，如果返回值为call可以不加该配置
                 .build();
         RetrofitService service = retrofit.create(RetrofitService.class);
-        return service.getInfo2("123");
+        return service.getHomeDataObservable("123");
     }
 
     /**
      * 使用retrofit，get请求，返回值为call
      */
-    private void getRetrofitData(){
+    public retrofit2.Call requestHomeDataCall(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitService service = retrofit.create(RetrofitService.class);
-        retrofit2.Call<ResponseBody> call = service.getInfo("123");
-        call.enqueue(new retrofit2.Callback<ResponseBody>() {
-            @Override
-            public void onResponse(retrofit2.Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
-                Logit.d("jinn","currentThread:"+Thread.currentThread().getName());
-                try {
-                    Logit.d("jinn","onResponse:"+response.body().string());
-                }catch (IOException e){
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(retrofit2.Call<ResponseBody> call, Throwable t) {
-                Logit.i("jinn","onFailure:"+ t.getMessage());
-            }
-        });
-
+        return  service.getHomeDataCall("123");
     }
 
     /**
      * 使用retrofit，post请求，返回值为call
      */
-    private void postRetrofitData(){
+    private retrofit2.Call postHomeDataCall(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -91,24 +69,7 @@ public class HomeModel extends BaseModel {
         RetrofitService service = retrofit.create(RetrofitService.class);
         Map<String,Object> map  = new HashMap<>();
         map.put("key","123");
-        retrofit2.Call<ResponseBody> call = service.postInfo(map);
-        call.enqueue(new retrofit2.Callback<ResponseBody>() {
-            @Override
-            public void onResponse(retrofit2.Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
-                Logit.d("jinn","currentThread:"+Thread.currentThread().getName());
-                try {
-                    Logit.d("jinn","onResponse:"+response.body().string());
-                }catch (IOException e){
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(retrofit2.Call<ResponseBody> call, Throwable t) {
-                Logit.i("jinn","onFailure:"+ t.getMessage());
-            }
-        });
+        return service.postHomeDataCall(map);
     }
 
 
