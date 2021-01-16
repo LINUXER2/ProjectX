@@ -1,4 +1,4 @@
-package com.jinn.projectx.activity.Utils;
+package com.jinn.pluginmodule.utils;
 
 import android.os.Handler;
 import android.os.HandlerThread;

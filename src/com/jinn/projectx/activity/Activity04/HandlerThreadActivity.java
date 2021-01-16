@@ -19,9 +19,13 @@ import com.jinn.projectx.R;
 
 /**
  * @author 好大一个坑
- *         handlerThread 方便在子线程与子线程之前通信，UI线程与子线程通信
+ *         handlerThread 方便在子线程与子线程之前通信，UI线程与子线程通信.用于多个耗时任务要串行执行
  *         handler 实现UI线程与UI线程，子线程与UI线程通信
- *         https://carson-ho.github.io/2016/08/15/HandlerThread/
+ *
+ *         使用①.new HandlerThread
+ *             ②.start
+ *             ③.使用handlerThread的looper初始化handler  Handler workHandler = new Handler(handlerThread.getLooper()){ 重写消息执行代码}
+ *
  */
 public class HandlerThreadActivity extends Activity {
     private TextView mTextView;
@@ -50,10 +54,6 @@ public class HandlerThreadActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mWorkHandler.sendEmptyMessage(0);   //ui线程通過Handler向子线程发送消息，消息排隊等待處理
-                Intent intent = new Intent();
-                intent.setAction("action_direct_move_to_hiboard");
-                intent.putExtra("card_type", 12);         //cardType为卡片id，不同卡片id由负一屏提供
-                HandlerThreadActivity.this.sendBroadcast(intent);
             }
         });
 

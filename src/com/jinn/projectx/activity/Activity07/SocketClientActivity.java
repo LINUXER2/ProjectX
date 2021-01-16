@@ -110,4 +110,9 @@ public class SocketClientActivity extends Activity {
           this.startActivity(intent);
     }
 
+    public void button6(View view) {
+        Intent intent = new Intent(SocketClientActivity.this,MessangerClientActivity.class);
+        this.startActivity(intent);
+    }
+
 }
